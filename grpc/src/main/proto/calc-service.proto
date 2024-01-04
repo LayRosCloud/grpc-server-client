@@ -1,0 +1,19 @@
+syntax="proto3";
+
+package com.proto.calc;
+
+message NumberRequest{
+  int32 firstNumber = 1;
+  int32 secondNumber = 2;
+}
+
+message ResultResponse{
+  int32 result = 1;
+}
+
+service Calculator{
+  rpc fold(NumberRequest) returns (ResultResponse);
+  rpc subtract(NumberRequest) returns (ResultResponse);
+  rpc multiply(NumberRequest) returns (ResultResponse);
+  rpc divide(NumberRequest) returns (ResultResponse);
+}
